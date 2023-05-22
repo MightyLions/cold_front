@@ -2,7 +2,8 @@ module.exports = {
     'env': {
         'browser': true,
         'es2021': true,
-        'jest': true
+        'jest': true,
+        'node':true
     },
     'extends': [
         'eslint:recommended',
@@ -29,7 +30,7 @@ module.exports = {
     'rules': {
         'react/react-in-jsx-scope': 'off',
         'indent': ['error', 4],
-        'linebreak-style': ['error', 'unix'],
+        'linebreak-style': 0,
         'quotes': ['error', 'single'],
         'semi': ['error', 'never'],
         'no-extra-semi': 'error',
