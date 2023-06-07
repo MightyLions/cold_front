@@ -29,7 +29,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false, //모듈컴파일 해제 
     "noEmit": true,
     "jsx": "react-jsx"
   },
