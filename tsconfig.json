@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es2015"
-    ],
+    "lib": ["dom", "dom.iterable", "es2015"],
     "noImplicitAny": true,
     "strictNullChecks": true,
     "allowJs": true,
@@ -14,27 +10,25 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "removeComments": true,
-    
-    "strictFunctionTypes": true, //함수파라미터 타입체크 강하게 
+
+    "strictFunctionTypes": true, //함수파라미터 타입체크 강하게
     "strictPropertyInitialization": true, //class constructor 작성시 타입체크 강하게
     "noImplicitThis": true, //this 키워드가 any 타입일 경우 에러내기
     "alwaysStrict": true, //자바스크립트 "use strict" 모드 켜기
     "noUnusedLocals": true, //쓰지않는 지역변수 있으면 에러내기
     "noUnusedParameters": true, //쓰지않는 파라미터 있으면 에러내기
-    "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기 
-    "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기 
+    "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기
+    "noFallthroughCasesInSwitch": true, //switch문 이상하면 에러내기
 
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false, //모듈컴파일 해제 
+    "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
