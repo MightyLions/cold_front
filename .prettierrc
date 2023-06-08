@@ -3,15 +3,15 @@
   "semi": true,
   "useTabs": false,
   "tabWidth": 2,
-  "trailingComma": "all", 
+  "trailingComma": "es5",
   "printWidth": 80,
-  "arrowParens": "avoid",
+  "arrowParens": "always",
   "bracketSpacing": true,
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
-  "jsxBracketSameLine": false,
+  "jsxBracketSameLine": true,
   "jsxSingleQuote": false,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false
-  }
+}

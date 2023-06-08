@@ -1,3 +1,3 @@
 export const MainToggle = () => {
-    return <></>
-}
+  return <div></div>;
+};

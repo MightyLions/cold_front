@@ -1,3 +1,3 @@
 export const BusinessMyPage = () => {
-    return <></>
-}
+  return <>business</>;
+};
