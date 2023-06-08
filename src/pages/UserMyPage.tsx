@@ -1,3 +1,3 @@
 export const UserMyPage = () => {
-    return <></>
-}
+  return <>mypage</>;
+};
