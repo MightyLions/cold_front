@@ -1,4 +1,8 @@
+import { FormControl, InputAdornment, TextField } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const StyledHeader = styled.header`
   display: block;
@@ -56,7 +60,32 @@ const Header = () => {
     <StyledHeader>
       <StyledNav>
         <StyledNavLeft>
-          <img src="/img/coldpitch_logo.png" />
+          <Link to={'/'}>
+            <img src="/img/coldpitch_logo.png" height={23} />
+          </Link>
+          <FormControl>
+            <TextField
+              size="small"
+              variant="outlined"
+              placeholder="검색"
+              style={{ height: 23 }}
+              InputProps={{
+                style: {
+                  borderRadius: '20px',
+                },
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <ClearIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </FormControl>
         </StyledNavLeft>
         <StyledNavRight>
           <StyledMenuList></StyledMenuList>
