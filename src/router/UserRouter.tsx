@@ -3,10 +3,10 @@ import MainPage from '../pages/MainPage';
 import HelloPage from '../pages/HelloPage';
 import Error404Page from '../pages/Error404Page';
 import { UserMyPage } from '../pages/UserMyPage';
-import { RegistrationPage } from '../pages/RegistrationPage';
 import SignUpPage from '../pages/SignUpPage';
-import { LoginPage } from '../pages/LoginPage';
 import { HomePage } from '../pages/HomePage';
+import { LoginPage } from '../pages/LoginPage';
+import { RegistrationPage } from '../pages/RegistrationPage';
 
 const UserRouter = () => {
   return (

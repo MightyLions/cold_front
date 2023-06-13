@@ -1,8 +1,7 @@
-import { FormControl, InputAdornment, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import SearchIcon from '@mui/icons-material/Search';
-import ClearIcon from '@mui/icons-material/Clear';
+import SearchInput from '../atoms/SearchInput';
+import { useMemo, useState } from 'react';
 
 const StyledHeader = styled.header`
   display: block;
@@ -46,8 +45,9 @@ const StyledNavRight = styled.div`
 const StyledMenuList = styled.div`
   display: flex;
   flex-direction: row;
-  transition: all 0.1s ease-out 0s;
-  margin-right: 8px;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
 `;
 
 const Sign = styled.div`
@@ -55,7 +55,36 @@ const Sign = styled.div`
   flex-direction: row;
 `;
 
+const SearchBox = styled.div`
+  width: 100%;
+  display: block;
+`;
+
+const SearchContent = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  max-width: 192px;
+  transition: all 0.2s ease-out 0s;
+`;
+
+const MMenuList = styled.div``;
+
 const Header = () => {
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  const changeWidthSize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useMemo(() => {
+    window.addEventListener('resize', changeWidthSize);
+    return () => {
+      window.removeEventListener('resize', changeWidthSize);
+    };
+  }, []);
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -63,33 +92,21 @@ const Header = () => {
           <Link to={'/'}>
             <img src="/img/coldpitch_logo.png" height={23} />
           </Link>
-          <FormControl>
-            <TextField
-              size="small"
-              variant="outlined"
-              placeholder="검색"
-              style={{ height: 23 }}
-              InputProps={{
-                style: {
-                  borderRadius: '20px',
-                },
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon />
-                  </InputAdornment>
-                ),
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <ClearIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </FormControl>
+          <SearchBox>
+            <SearchContent>
+              <SearchInput />
+            </SearchContent>
+          </SearchBox>
         </StyledNavLeft>
         <StyledNavRight>
-          <StyledMenuList></StyledMenuList>
-          <Sign></Sign>
+          {width > 991 ? (
+            <StyledMenuList>
+              test
+              <Sign />
+            </StyledMenuList>
+          ) : (
+            <MMenuList>teststet</MMenuList>
+          )}
         </StyledNavRight>
       </StyledNav>
     </StyledHeader>
