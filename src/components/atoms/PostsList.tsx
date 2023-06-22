@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 import styled from 'styled-components';
-import PostCard from './PostCard';
+import MyPagePostCard from './MyPagePostCard';
 
 interface Post {
   id: number;
@@ -33,7 +33,7 @@ const PostsList: React.FC<PostsListProps> = ({ userPosts }) => {
   return (
     <OuterGrid>
       {userPosts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <MyPagePostCard key={post.id} post={post} />
       ))}
     </OuterGrid>
   );

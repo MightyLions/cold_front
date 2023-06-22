@@ -50,7 +50,7 @@ const AuthorTitleGrid = styled(Grid)`
   vertical-align: middle;
 `;
 
-const PostCard: React.FC<PostListProps> = ({ post }) => {
+const MyPagePostCard: React.FC<PostListProps> = ({ post }) => {
   return (
     <OuterGrid container>
       <CardGrid container>
@@ -102,4 +102,4 @@ const PostCard: React.FC<PostListProps> = ({ post }) => {
   );
 };
 
-export default PostCard;
+export default MyPagePostCard;
