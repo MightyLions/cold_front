@@ -1,4 +1,4 @@
-import {Avatar, Card, CardHeader, IconButton, styled} from "@mui/material";
+import {Avatar, Card, CardHeader, IconButton, Typography, styled} from "@mui/material";
 import {red} from "@mui/material/colors";
 
 const TransparentCard = styled(Card)(({ }) => ({
@@ -19,8 +19,10 @@ export const PostRegisterInfo = () => {
             <IconButton aria-label="settings">
             </IconButton>
           }
-          title = "작성자 이름"
-          subheader = "2023년 06월 14일"
+          title = {<Typography variant="h6">
+            작성자 이름이 카테고리를 공유했어요.
+          </Typography>}          
+          subheader = "@{기업 이름} / 약 {한 시간 전}"
         />
       </TransparentCard>
   );

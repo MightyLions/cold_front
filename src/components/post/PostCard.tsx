@@ -9,11 +9,10 @@ import {
   Divider,
   Avatar,
   Button,
-  Modal,
   Box,
+  Modal,
 } from '@mui/material';
 import { useState } from 'react';
-import FileDown from './FileDropDown';
 
 const StyledCard = styled(Card)(() => ({
   backgroundColor: '',
@@ -82,17 +81,18 @@ export const PostCard = () => {
               <Button onClick={handleOpen}>
                 <Avatar src={commentImg} style={{ padding: '6px' }} />
               </Button>
+              <Modal open={open} onClose={handleClose}>
+                <Box
+                  sx={{
+                    bgcolor: 'white',
+                    p: 2,
+                    textAlign: 'center',
+                    margin : '10%'
+                  }}>
+                  모달창
+                </Box>
+              </Modal>
             </Grid>
-            <Modal open={open} onClose={handleClose}>
-              <Box
-                sx={{
-                  bgcolor: 'white',
-                  p: 2,
-                  textAlign: 'center',
-                }}>
-                모달창
-              </Box>
-            </Modal>
           </Grid>
         </CardActions>
       </div>
