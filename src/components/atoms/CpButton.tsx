@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 interface buttonProps {
   name?: string;
   value?: any;
-  onclick?: () => {};
+  onclick?: () => void;
 }
 
 export default ({ name, value, onclick }: buttonProps) => {
