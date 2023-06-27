@@ -1,6 +1,7 @@
 import { Card, styled } from "@mui/material";
 import { PostCard } from "../components/post/PostCard";
 import {PostRegisterInfo} from "../components/post/PostRegisterInfo";
+import React from "react";
 
 const CenterCard = styled(Card)(({ }) => ({
   backgroundColor: 'transparent',
@@ -10,8 +11,10 @@ const CenterCard = styled(Card)(({ }) => ({
 }));
 
 export const HomePage = () => {
-  return <CenterCard>
-    <PostRegisterInfo></PostRegisterInfo>
+  return (
+  <CenterCard>
+    <PostRegisterInfo fc={"black"}></PostRegisterInfo>
     <PostCard></PostCard>
   </CenterCard>
+  )
 };

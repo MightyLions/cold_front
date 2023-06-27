@@ -4,12 +4,12 @@ import React from "react";
 
 
 const TransparentCard = styled(Card)(({}) => ({
-  backgroundColor: 'transparent',
+  backgroundColor: '#F5F5F5',
   boxShadow: 'none',
 }));
 
 
-export const PostRegisterInfo = ({fc}) => {
+export const PostRegisterInfoInDetail = ({fc}) => {
   return (  
       <TransparentCard>
         <CardHeader
@@ -18,13 +18,17 @@ export const PostRegisterInfo = ({fc}) => {
             R
             </Avatar>
           }
+          action={
+            <IconButton aria-label="settings">
+            </IconButton>
+          }
           title = {
           <Typography variant="h6" style={{color:fc}}>
-            {'{작성자} 이름이 {카테고리}를 공유했어요.'}
+            MightLions
           </Typography>}          
           subheader = {
           <span style={{color: fc}}>
-            {"@{기업 이름} / 약 {한 시간 전}"}
+            @기업설명 / {"{기업 태그}"}
           </span>}
         />
       </TransparentCard>

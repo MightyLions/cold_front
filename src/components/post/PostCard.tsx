@@ -11,16 +11,27 @@ import {
   Button,
   Box,
   Modal,
+  Backdrop,
+  makeStyles,
 } from '@mui/material';
 import { useState } from 'react';
+import { PostDetail } from './PostDetail';
+import { grey } from '@mui/material/colors';
+import React from 'react';
 
 const StyledCard = styled(Card)(() => ({
-  backgroundColor: '',
-  borderRadius: '15px', // tmp
+  borderRadius: '15px',
   marginLeft: '40px', // tmp
   marginRight: '40px', // tmp
   marginTop: '-5px', // tmp
+  padding: '3%',
 }));
+
+const StyledModal = styled(Modal)((theme) => ({
+  backdropFilter: 'blur(2px)',
+  overflow: 'auto'
+}));
+
 
 export const PostCard = () => {
   const likeImg = 'https://cdn-icons-png.flaticon.com/512/6611/6611465.png';
@@ -54,7 +65,7 @@ export const PostCard = () => {
         }
       />
       <CardContent>
-        <Typography fontWeight="bold" color="gray">
+        <Typography variant="h6" fontWeight="bold" color="gray">
           우리는 지난 2개월 동안 기획과 백엔드 개발을 병행하였다. 가끔 기획에서
           꼬이고 백엔드 개발에 진전이 생기지 않아 미치는 줄 알았으나 나름대로 잘
           해왔다고 생각한다. 하지만 이제는 프론트까지 하게 되었다. 대체
@@ -81,17 +92,9 @@ export const PostCard = () => {
               <Button onClick={handleOpen}>
                 <Avatar src={commentImg} style={{ padding: '6px' }} />
               </Button>
-              <Modal open={open} onClose={handleClose}>
-                <Box
-                  sx={{
-                    bgcolor: 'white',
-                    p: 2,
-                    textAlign: 'center',
-                    margin : '10%'
-                  }}>
-                  모달창
-                </Box>
-              </Modal>
+              <StyledModal open={open} onClose={handleClose}>
+                <PostDetail />
+              </StyledModal>
             </Grid>
           </Grid>
         </CardActions>

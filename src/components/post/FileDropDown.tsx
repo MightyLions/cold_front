@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
-const MyDropdown = () => {
+export const MyDropdown = () => {
   const [selectedValue, setSelectedValue] = useState('');
 
-  const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setSelectedValue(event.target.value);
   };
 
@@ -19,5 +21,4 @@ const MyDropdown = () => {
     </div>
   );
 };
-
 export default MyDropdown;
