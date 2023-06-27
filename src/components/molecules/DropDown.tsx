@@ -6,7 +6,7 @@ type DropDownProps = {
   values: string[];
 }
 
-function Dropdown(prop: DropDownProps) {
+function Dropdown() {
   const [age, setAge] = React.useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
