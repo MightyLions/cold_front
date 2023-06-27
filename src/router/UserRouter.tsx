@@ -7,6 +7,8 @@ import SignUpPage from '../pages/SignUpPage';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 import { RegistrationPage } from '../pages/RegistrationPage';
+import { UserEditPage } from "../pages/UserEdit";
+
 
 const UserRouter = () => {
   return (
@@ -40,6 +42,11 @@ const UserRouter = () => {
       <Route
         path="/mypage"
         element={<UserMyPage />}
+        errorElement={<Error404Page />}
+      />
+      <Route
+        path="/edit"
+        element={<UserEditPage />}
         errorElement={<Error404Page />}
       />
     </Routes>
