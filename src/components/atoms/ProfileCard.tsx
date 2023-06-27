@@ -3,7 +3,9 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import styled from 'styled-components';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from 'react-router-dom';
 
 interface ProfileCardProps {
   user: {
@@ -30,8 +32,22 @@ const OuterGrid = styled(Grid)`
 `;
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ user }) => {
+  const navigate = useNavigate();
+
+  const handleEditClick = () => {
+    navigate('/edit');
+  };
+
   return (
     <OuterGrid>
+      <StyledGrid container>
+        <Grid item xs={11}></Grid>
+        <Grid item xs={1}>
+          <IconButton aria-label={'Modify'} onClick={handleEditClick}>
+            <EditIcon />
+          </IconButton>
+        </Grid>
+      </StyledGrid>
       <StyledGrid container>
         <Avatar
           sx={{
