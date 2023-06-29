@@ -51,4 +51,4 @@ export default () => {
             <CreateProductModal open={productOpen} handleClose={handleProductClose} />
         </>
     );
-};
+}
