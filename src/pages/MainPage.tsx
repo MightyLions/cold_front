@@ -3,6 +3,7 @@ import Modal from '../components/molecules/modal/Modal';
 import PostModal from '../components/molecules/modal/CreatePostModal';
 import CreateProductModal from '../components/molecules/modal/CreateProductModal';
 import { useState } from 'react';
+import MainPageFrame from "../components/organisms/MainPageFrame";
 
 export default () => {
     const [open, setOpen] = useState<boolean>(false);
@@ -38,6 +39,7 @@ export default () => {
     return (
         <>
             <div>main page</div>
+            <MainPageFrame/>
             <div>
                 <CpButton name="Open Modal" onclick={() => setOpen(true)} />
             </div>
