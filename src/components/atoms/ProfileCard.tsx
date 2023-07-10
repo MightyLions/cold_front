@@ -3,9 +3,10 @@ import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import styled from 'styled-components';
-import { Box, Button, IconButton } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router-dom';
+import { UserTagList } from './UserTagList';
 
 interface ProfileCardProps {
   user: {
@@ -15,30 +16,6 @@ interface ProfileCardProps {
     profilePic: string;
   };
 }
-
-interface ProfileCardProps {
-  user: {
-    name: string;
-    age: number;
-    email: string;
-    profilePic: string;
-  };
-}
-
-const userTags = [
-  {
-    name: 'AI',
-    color: 'caf0f8',
-  },
-  {
-    name: 'SNS',
-    color: 'a0c4ff',
-  },
-  {
-    name: 'Health',
-    color: 'fec89a',
-  },
-];
 
 const StyledGrid = styled(Grid)`
   //background: #ffdbdb;
@@ -59,27 +36,6 @@ const OuterGrid = styled(Grid)`
   //border: 1px gray solid;
   padding: 5%;
 `;
-
-const UserTagButton = ({ name, color }) => {
-  return (
-    <Grid item>
-      <Button
-        variant="contained"
-        style={{ backgroundColor: `#${color}`, color: '#000' }}>
-        #{name}
-      </Button>
-    </Grid>
-  );
-};
-const UserTagList = ({ tags }) => {
-  return (
-    <Grid container spacing={2}>
-      {tags.map((tag, index) => (
-        <UserTagButton key={index} name={tag.name} color={tag.color} />
-      ))}
-    </Grid>
-  );
-};
 
 const ProfileCard: React.FC<ProfileCardProps> = ({ user }) => {
   const navigate = useNavigate();
@@ -127,11 +83,12 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ user }) => {
             회사 키워드
           </Typography>
           <Typography variant="body1" color="textSecondary" gutterBottom>
-            <UserTagList tags={userTags} />
+            <UserTagList />
           </Typography>
         </Box>
       </StyledContentsGrid>
     </OuterGrid>
   );
 };
+
 export default ProfileCard;
