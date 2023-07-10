@@ -12,12 +12,12 @@ const StyledDiv = styled.div`
 export const Navi = () => {
   return (
     <StyledDiv>
-      <div>
+      
         <TopicNaviButton value="🏠 home" />
         <TopicNaviButton value="😜 my" />
         <TopicNaviButton value="💕 like" />
         <TopicNaviButton value="💕 like" />
-      </div>
+      
     </StyledDiv>
   );
 };

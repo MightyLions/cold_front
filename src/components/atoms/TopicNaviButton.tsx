@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
+
   display: flex;
   align-items: flex-start;
   font-size: 13px;
@@ -22,6 +23,7 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #f0f0f0;
   }
+
 `;
 
 export const TopicNaviButton = ({ value }) => {
