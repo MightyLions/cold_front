@@ -11,7 +11,6 @@ const StyledMain = styled.main`
   height: 100%;
   margin: 0px auto;
   padding: 0px;
-  background-color: rgb(245, 245, 247);
 `;
 
 const App = () => {
