@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import SearchInput from '../atoms/SearchInput';
@@ -5,14 +6,13 @@ import { useMemo, useState } from 'react';
 
 const StyledHeader = styled.header`
   display: block;
-  border-bottom: 2px solid #0648D9; /* 파란색으로 변경 */
+  border-bottom: 2px solid #0648D9;
   position: sticky;
   top: 0px;
   z-index: 100;
   width: 100%;
   background-color: white;
 `;
-
 
 const StyledNav = styled.nav`
   margin: auto;
@@ -22,9 +22,7 @@ const StyledNav = styled.nav`
   height: 52px;
   min-height: 3rem;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   position: relative;
 `;
@@ -32,7 +30,6 @@ const StyledNav = styled.nav`
 const StyledNavLeft = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-align: center;
   align-items: center;
   width: 100%;
   margin-right: 0.25rem;
@@ -46,7 +43,6 @@ const StyledNavRight = styled.div`
 const StyledMenuList = styled.div`
   display: flex;
   flex-direction: row;
-  -webkit-box-align: center;
   align-items: center;
   position: relative;
 `;
@@ -72,6 +68,17 @@ const SearchContent = styled.div`
 
 const MMenuList = styled.div``;
 
+const MenuItem = styled(Link)`
+  color: #0648D9;
+  font-weight: bold;
+  margin-right: 1rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Header = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
 
@@ -89,25 +96,26 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledNav>
-
         <StyledNavLeft>
-          <Link to={'/'}>
-          <img src="/img/logo.png" height={27} alt="로고" style={{ margin: '0 10px' }} />
+          <Link to="/">
+            <img src="/img/logo.png" height={27} alt="로고" style={{ margin: '0 10px' }} />
           </Link>
           <SearchInput />
         </StyledNavLeft>
-        
+
         <StyledNavRight>
           {width > 991 ? (
             <StyledMenuList>
-              test
+              <MenuItem to="/post">Post</MenuItem>
+              <MenuItem to="/my">My</MenuItem>
+              <MenuItem to="/hot">Hot</MenuItem>
+              <MenuItem to="/solution">Solution</MenuItem>
               <Sign />
             </StyledMenuList>
           ) : (
             <MMenuList>teststet</MMenuList>
           )}
         </StyledNavRight>
-
       </StyledNav>
     </StyledHeader>
   );
