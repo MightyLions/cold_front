@@ -106,9 +106,9 @@ const Header = () => {
         <StyledNavRight>
           {width > 991 ? (
             <StyledMenuList>
-              <MenuItem to="/post">Post</MenuItem>
-              <MenuItem to="/my">My</MenuItem>
-              <MenuItem to="/hot">Hot</MenuItem>
+              <MenuItem to={'/home'}>Post</MenuItem>
+              <MenuItem to={'/mypage'}>My</MenuItem>
+              <MenuItem to={''}>Hot</MenuItem>
               <MenuItem to="/solution">Solution</MenuItem>
               <Sign />
             </StyledMenuList>

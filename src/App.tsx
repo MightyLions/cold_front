@@ -18,7 +18,6 @@ const App = () => {
   return (
     <StyledMain>
       <Header />
-      <Navigation />
       {/* 권한별 라우터 정의 필요 */}
       <UserRouter />
       <Footer />
