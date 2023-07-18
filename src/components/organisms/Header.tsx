@@ -5,13 +5,14 @@ import { useMemo, useState } from 'react';
 
 const StyledHeader = styled.header`
   display: block;
-  box-shadow: rgb(234, 234, 236) 0px 1px 0px;
+  border-bottom: 2px solid #0648D9; /* 파란색으로 변경 */
   position: sticky;
   top: 0px;
   z-index: 100;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.72);
+  background-color: white;
 `;
+
 
 const StyledNav = styled.nav`
   margin: auto;
@@ -88,16 +89,14 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledNav>
+
         <StyledNavLeft>
           <Link to={'/'}>
-            <img src="/img/coldpitch_logo.png" height={23} />
+          <img src="/img/logo.png" height={27} alt="로고" style={{ margin: '0 10px' }} />
           </Link>
-          <SearchBox>
-            <SearchContent>
-              <SearchInput />
-            </SearchContent>
-          </SearchBox>
+          <SearchInput />
         </StyledNavLeft>
+        
         <StyledNavRight>
           {width > 991 ? (
             <StyledMenuList>
@@ -108,6 +107,7 @@ const Header = () => {
             <MMenuList>teststet</MMenuList>
           )}
         </StyledNavRight>
+
       </StyledNav>
     </StyledHeader>
   );
